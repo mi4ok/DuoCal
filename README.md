@@ -6,13 +6,12 @@
 
 ## Быстрый старт
 
-1. Создайте БД и выполните миграцию:
-   ```bash
-   mysql -u user -p -e "CREATE DATABASE duocal CHARACTER SET utf8mb4;"
-   mysql -u user -p duocal < duocal/migrations/001_init.sql
-   ```
-2. Скопируйте `duocal/config.local.example.php` в `duocal/config.local.php` и укажите доступ к БД.
-3. Настройте веб-сервер так, чтобы document root указывал на папку `duocal/public/`.
+1. Настройте веб-сервер так, чтобы document root указывал на папку `duocal/public/`.
+2. Откройте в браузере **http://ваш-домен.com/install/** (или `http://localhost/install/` для локальной разработки).
+3. Заполните форму: хост MySQL, имя базы, пользователь, пароль и при необходимости URL приложения. Нажмите «Установить».
+4. После установки удалите папку `duocal/public/install/` с сервера.
+
+Из консоли: `php duocal/public/install/index.php` (с флагом `--no-interactive` только миграции по существующему конфигу).
 
 ## Пуш в удалённый репозиторий
 

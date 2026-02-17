@@ -1,10 +1,35 @@
-/* DuoCal — основные стили */
+/* DuoCal — тема «Морская свежесть» */
 
 :root {
-    --color-primary: #6366f1;
-    --color-bg: #f8fafc;
-    --color-text: #1e293b;
-    --color-muted: #64748b;
+    --bg: #F4F9FB;
+    --bg-alt: #E8F4F8;
+    --surface: #FFFFFF;
+    --primary: #2B8A9E;
+    --primary-dark: #1F6F80;
+    --primary-light: #D1EDF3;
+    --primary-ghost: #E8F6FA;
+    --secondary: #5FBDCF;
+    --accent: #F0A050;
+    --accent-light: #FFF0DC;
+    --text: #1A3A4A;
+    --text-mid: #3D6070;
+    --text-light: #6B8A96;
+    --border: #D4E8EE;
+    --border-light: #E8F1F5;
+    --success: #4CAF6E;
+    --success-light: #E2F5E9;
+    --danger: #E05A5A;
+    --danger-light: #FDEAEA;
+    --partner1: #2B8A9E;
+    --partner2: #E07A5F;
+    --radius: 14px;
+    --radius-sm: 8px;
+    --radius-lg: 16px;
+    --font: 'Nunito', system-ui, sans-serif;
+    --font-display: 'Fraunces', Georgia, serif;
+    --shadow: 0 2px 12px rgba(43, 138, 158, 0.08);
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 8px 30px rgba(43, 138, 158, 0.12);
 }
 
 * {
@@ -13,13 +38,97 @@
 
 body {
     margin: 0;
-    font-family: system-ui, -apple-system, sans-serif;
+    font-family: var(--font);
     font-size: 16px;
     line-height: 1.5;
-    color: var(--color-text);
-    background: var(--color-bg);
+    color: var(--text);
+    background: var(--bg);
+    min-height: 100vh;
 }
 
 #app {
     min-height: 100vh;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    color: var(--text);
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--secondary);
+}
+
+button, .btn {
+    font-family: var(--font);
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: var(--radius-sm);
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s;
+}
+
+button.primary, .btn-primary {
+    background: var(--primary);
+    color: var(--surface);
+}
+
+button.primary:hover, .btn-primary:hover {
+    background: var(--secondary);
+    box-shadow: var(--shadow-sm);
+}
+
+input, textarea, select {
+    font-family: var(--font);
+    font-size: 1rem;
+    padding: 10px 14px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--surface);
+    color: var(--text);
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px var(--primary-light);
+}
+
+.card, .panel {
+    background: var(--surface);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-sm);
+}
+
+.card {
+    padding: 16px;
+}
+
+.partner-1 { color: var(--partner1); }
+.partner-2 { color: var(--partner2); }
+.bg-partner-1 { background: var(--partner1); }
+.bg-partner-2 { background: var(--partner2); }
+
+.text-muted { color: var(--text-light); }
+.bg-alt { background: var(--bg-alt); }
+
+/* Прототип: скроллбар, анимации */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+
+@keyframes duocal-slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.duocal-toast {
+    animation: duocal-slideDown 0.3s ease;
 }

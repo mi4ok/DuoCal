@@ -285,7 +285,7 @@ INSERT INTO achievements (slug, title, description, icon, category, condition_ty
 **~2 часа в день**
 
 - [x] День 1-2: Настройка проекта, структура файлов, конфиг
-- [ ] День 3-4: База данных (миграции), модели (Database.php, Auth.php)
+- [x] День 3-4: База данных (миграции), модели (Database.php, Auth.php)
 - [ ] День 5-6: Регистрация, авторизация, создание пары по инвайт-коду
 - [ ] День 7: PWA манифест + Service Worker (базовый)
 

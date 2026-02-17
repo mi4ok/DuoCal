@@ -67,7 +67,7 @@ CREATE TABLE todo_lists (
     couple_id INT NOT NULL,
     title VARCHAR(255) NOT NULL,
     type ENUM('todo', 'shopping', 'wishlist') DEFAULT 'todo',
-    icon VARCHAR(10) DEFAULT '📝',
+    icon VARCHAR(10) DEFAULT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (couple_id) REFERENCES couples(id)
 );
